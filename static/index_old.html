@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Public twitter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    .s1 {
+      display:inline-block;
+    }
+    .s2 {
+      display:inline-block;
+      width:90px;
+      text-align:left;
+    }
+    .s3 {
+      display:inline-block;
+      width:250px;
+      text-align:center;
+    }
+    .i3 { width: 245px; }
+    .s4 {
+      display:inline-block;
+      width:90px;
+    }
+    .i4 { width: 85px; }
+    </style>
+
+</head>
+
+<body bgcolor="#F4f4f4" text="#333333" link="#cc4422" vlink="#cc4422" alink="#cc4422" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Top -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td bgcolor="#2E4580" align="left" valign="top"><img src="images/_clear.gif" width="1" height="4"></td>
+  </tr>
+  <tr>
+    <td bgcolor="#38549C"><img src="images/logo.png" width="301" height="77" alt="Logo"></td>
+  </tr>
+  <tr>
+    <td background="images/list_1.gif"><img src="images/_clear.gif" width="1" height="8"></td>
+  </tr>
+</table>
+<div style="position:absolute; top:5; right:0;"><img src="images/at.png"></div>
+<!-- Top -->
+
+
+<table width="100%" border="0" cellspacing="5" cellpadding="5">
+  <tr>
+    <td width="650" align="left" valign="top">
+      <!-- Left -->
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="tweet" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">Tweet:</span>
+      <span class="s3"><input class="i3" type="text" name="param" maxlenght="140" placeholder="Your message there"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="tweet"></span></div>
+    </form>
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="retweet" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">TweetID:</span>
+      <span class="s3"><input class="i3" type="text" name="param" maxlenght="140" placeholder="Long number from tweet url"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="retweet"></span></div>
+    </form>
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="delete" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">TweetID:</span>
+      <span class="s3"><input class="i3" type="text" name="param" maxlenght="140" placeholder="Long number from tweet url"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="del tweet"></span></div>
+    </form>
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="follow" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">User:</span>
+      <span class="s3"><input class="i3" type="text" name="param" placeholder="Username to follow"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="follow"></span></div>
+    </form>
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="unfollow" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">User:</span>
+      <span class="s3"><input class="i3" type="text" name="param" placeholder="unfollow user"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="un-follow"></span></div>
+    </form>
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="direct_message" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">User:</span>
+      <span class="s3" style="width:130;"><input class="i3" style="width:125;" type="text" name="param" placeholder="username"></span>
+      <span class="s2" style="width:70;text-align:right;">Message:</span>
+      <span class="s3"><input class="i3" type="text" name="ex_param" placeholder="direct message"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="DM"></span></div>
+    </form>
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="favorite" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">TweetID:</span>
+      <span class="s3"><input class="i3" type="text" name="param" placeholder="Long number from tweet url"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="favorite tweet"></span></div>
+    </form>
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="update_name" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">New name:</span>
+      <span class="s3"><input class="i3" type="text" name="param" placeholder="Set new username"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="set username"></span></div>
+    </form>
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="update_url" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">URL:</span>
+      <span class="s3"><input class="i3" type="text" name="param" placeholder="Set new profile URL"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="set url"></span></div>
+    </form>
+    <form action="/new_action" method="POST"><div>
+      <span class="s1"><input type="hidden" value="update_location" name="action"><input type="hidden" value="/index_old.html" name="redirect_url"></span>
+      <span class="s2">Location:</span>
+      <span class="s3"><input class="i3" type="text" name="param" placeholder="Set new user location"></span>
+      <span class="s4"><input class="i4" type="submit" name="submit" value="set location"></span></div>
+    </form>
+
+      <!-- Left -->
+
+    </td>
+    <td width="220" bgcolor="#e4e4e4" align="left" valign="top">
+      <!-- Center -->
+      <!-- Center -->
+    </td>
+    <td align="left" valign="top">
+    </td>
+    <td width="250" align="right" valign="top">
+      <!-- Right -->
+      <a class="twitter-timeline" href="https://twitter.com/x1BADB002" data-widget-id="257467596813770752">Tweets by @x1BADB002</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <!-- Right -->
+    </td>
+    <td width="50" align="left" valign="top">
+    </td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+cron:
+- description: main cron task
+  url: /cron/worker
+  schedule: every 5 mins
+
+#- description: put task to database
+#  url: /cron/test_put
+#  schedule: every 60 mins

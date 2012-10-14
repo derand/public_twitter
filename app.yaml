@@ -1,0 +1,32 @@
+application: <app_name>
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+
+handlers:
+- url: /favicon\.ico
+  static_files: static/favicon.ico
+  upload: static/favicon\.ico
+
+- url: /images
+  static_dir: static/images
+
+- url: /index\.html
+  static_files: static/index.html
+  upload: static/index\.html
+
+- url: /index_old\.html
+  static_files: static/index_old.html
+  upload: static/index_old\.html
+
+- url: /cron/.*
+  script: cron.app
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.1"

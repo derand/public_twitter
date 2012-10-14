@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+
+# your twitter application consumer key & secret
+CONSUMER_KEY = ''
+CONSUMER_SECRET = ''
+
+# your twitter user token & secret
+TOKEN = ''
+TOKEN_SECRET = ''
+
+
+# twitter API url
+API_URL = 'https://api.twitter.com/1.1/'
+
+
