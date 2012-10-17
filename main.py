@@ -18,6 +18,7 @@
 
 import webapp2
 from google.appengine.ext import db
+from google.appengine.api import xmpp
 
 from tw_db import Task, all_actions
 
@@ -25,7 +26,7 @@ import json
 from google.appengine.api import memcache
 import requests
 from oauth_hook import OAuthHook
-from constants import CONSUMER_KEY, CONSUMER_SECRET, TOKEN, TOKEN_SECRET, API_URL
+from constants import CONSUMER_KEY, CONSUMER_SECRET, TOKEN, TOKEN_SECRET, API_URL, JABBER_UID
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -52,6 +53,9 @@ class NewAction(webapp2.RequestHandler):
 
 		if task.status == 'ready':
 			client = record = memcache.get('client')
+
+		if JABBER_UID is not None or len(JABBER_UID) > 0:
+			xmpp.send_message('2derand@gmail.com', '%s: /%s %s %s'%(self.request.remote_addr, action, param, ex_param is not None and ex_param or ''))
 
 		if self.request.get('redirect_url'):
 			self.redirect(self.request.get('redirect_url'))

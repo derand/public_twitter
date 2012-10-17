@@ -12,4 +12,6 @@ TOKEN_SECRET = ''
 # twitter API url
 API_URL = 'https://api.twitter.com/1.1/'
 
+# jabber uid to send logs about actions
+JABBER_UID = ''
 

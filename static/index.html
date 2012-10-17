@@ -42,7 +42,7 @@
         http.setRequestHeader("Content-length", params.length);
         http.setRequestHeader("Connection", "close");
 
-        http.onreadystatechange = function() {//Call a function when the state changes.
+        http.onreadystatechange = function() {
           if(http.readyState == 4 && http.status == 200) {
           }
         }
@@ -106,9 +106,8 @@
     <td width="500" align="left" valign="top">
       <!-- Left -->
     <form action="/new_action" method="POST"><div>
-      <span class="s1"><input type="hidden" value="tweet" name="action"><input type="hidden" value="/index.html" name="redirect_url"></span>
       <span class="s2"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Command:</font></span><br>
-      <span class="s3"><textarea class="i3" type="text" name="param" maxlenght="140" placeholder="Type command there" id="command"></textarea></span><br>
+      <span class="s3"><textarea class="i3" type="text" name="param" maxlenght="250" placeholder="Type command there" id="command"></textarea></span><br>
       <!-- span class="s4"><input class="i4" type="submit" name="submit" value="send"></span -->
       <span class="s4"><input class="i4" type="button" onClick="parse_command(document.getElementById('command').value);" value="send"></span></div>
     </form>
