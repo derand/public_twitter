@@ -27,6 +27,8 @@ from google.appengine.api import memcache
 import requests
 from oauth_hook import OAuthHook
 from constants import CONSUMER_KEY, CONSUMER_SECRET, TOKEN, TOKEN_SECRET, API_URL, JABBER_UID
+from cron import do_task
+import time
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -49,13 +51,23 @@ class NewAction(webapp2.RequestHandler):
 			if action in ['tweet', 'delete', 'follow', 'unfollow', 'retweet', 'direct_message',
 						  'update_name', 'update_url', 'update_location', 'favorite', 'un-favorite']:
 				task.status = 'ready'
-			task.put()
+		else:
+			if self.request.get('redirect_url'):
+				self.redirect(self.request.get('redirect_url'))
+			else:
+				self.response.out.write('{"status": "error"}')
+			return
 
 		if task.status == 'ready':
-			client = record = memcache.get('client')
+			last_time = memcache.get('last_time')
+			if last_time <> None and (time.time()-last_time) > 60*10 or last_time == None:
+				task.status = 'completed'
+				response = do_task(task)
+
+		task.put()
 
 		if JABBER_UID is not None or len(JABBER_UID) > 0:
-			xmpp.send_message('2derand@gmail.com', '%s: /%s %s %s'%(self.request.remote_addr, action, param, ex_param is not None and ex_param or ''))
+			xmpp.send_message(JABBER_UID, '%s: /%s %s %s'%(self.request.remote_addr, action, param, ex_param is not None and ex_param or ''))
 
 		if self.request.get('redirect_url'):
 			self.redirect(self.request.get('redirect_url'))

@@ -1,7 +1,7 @@
 cron:
 - description: main cron task
   url: /cron/worker
-  schedule: every 5 mins
+  schedule: every 10 mins
 
 #- description: put task to database
 #  url: /cron/test_put
