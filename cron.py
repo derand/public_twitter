@@ -12,6 +12,7 @@ from google.appengine.api import users
 from google.appengine.ext import webapp
 from google.appengine.api import memcache
 from google.appengine.ext import db
+import logging
 
 import requests
 from oauth_hook import OAuthHook
@@ -84,7 +85,7 @@ def do_task(task):
 	else:
 		task.status = 'error'
 
-	if not memcache.add('last_time', time.time(), 60*60*24):
+	if not memcache.set('last_time', time.time(), 60*60*24):
 		logging.error('Memcache set failed for key "last_time".')
 	return response
 
